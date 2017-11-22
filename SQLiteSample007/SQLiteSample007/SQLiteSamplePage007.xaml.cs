@@ -35,7 +35,7 @@ namespace SQLiteSample007
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
             //Userテーブルに適当なデータを追加する
-            UserModel007.insertUser("鈴木");
+            UserModel007.insertUser(1,"鈴木");
             UserModel007.insertUser("田中");
             UserModel007.insertUser("斎藤");
 
@@ -55,6 +55,7 @@ namespace SQLiteSample007
             {
 
                 //Userテーブルの名前列をLabelに書き出す
+                layout.Children.Add(new Label { Text = user.Id });
                 layout.Children.Add(new Label { Text = user.Name });
             }
 

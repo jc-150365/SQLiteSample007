@@ -24,24 +24,40 @@ namespace SQLiteSample007
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
-
                 try
                 {
                     //データベースにUserテーブルを作成する
                     db.CreateTable<UserModel007>(); //赤線出てたから<UserModel007>付けた
-
-                    //Userテーブルに行追加する
+                                        //Userテーブルに行追加する
                     db.Insert(new UserModel007() { Name = name });
-
                     db.Commit();
-
                 }
                 catch (Exception e)
                 {
-
                     db.Rollback();
                     System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
 
+        //Userテーブルに行追加するためのメソッド
+        public static void insertUser(int id,string name)
+        {
+            //データベースに接続する
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    //データベースにUserテーブルを作成する
+                    db.CreateTable<UserModel007>(); //赤線出てたから<UserModel007>付けた
+                                                    //Userテーブルに行追加する
+                    db.Insert(new UserModel007() { Name = name ,Id=id});
+                    db.Commit();
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
                 }
             }
         }
