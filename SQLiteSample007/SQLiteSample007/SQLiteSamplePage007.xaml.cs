@@ -55,7 +55,7 @@ namespace SQLiteSample007
             {
 
                 //Userテーブルの名前列をLabelに書き出す
-                layout.Children.Add(new Label { Text = user.Id&"" });
+                layout.Children.Add(new Label { Text = user.Id.ToString() });
                 layout.Children.Add(new Label { Text = user.Name });
             }
 
