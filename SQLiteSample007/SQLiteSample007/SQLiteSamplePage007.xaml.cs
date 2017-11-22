@@ -46,6 +46,7 @@ namespace SQLiteSample007
                 Text = "Add"
             };
 
+            layout.Children.Add(buttonAdd);
 
             //Userテーブルの行データを取得
             var query = UserModel007.selectUser();
