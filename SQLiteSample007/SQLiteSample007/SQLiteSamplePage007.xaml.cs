@@ -11,12 +11,12 @@ namespace SQLiteSample007
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
             //Userテーブルに適当なデータを追加する
-            UserModel.insertUser("鈴木");
-            UserModel.insertUser("田中");
-            UserModel.insertUser("斎藤");
+            UserModel007.insertUser("鈴木");
+            UserModel007.insertUser("田中");
+            UserModel007.insertUser("斎藤");
 
             //Userテーブルの行データを取得
-            var query = UserModel.selectUser();
+            var query = UserModel007.selectUser();
 
             foreach (var user in query)
             {
